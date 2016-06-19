@@ -1,3 +1,4 @@
+var path = require( 'path' )
 var HtmlWebpackPlugin = require( 'html-webpack-plugin' )
 
 module.exports = {
@@ -10,9 +11,18 @@ module.exports = {
 		publicPath: '/',
 		filename: 'bundle.js'
 	},
+	resolve: {
+		alias: {
+			src: path.resolve( __dirname, 'src' ),
+			sass: path.resolve( __dirname, 'sass' )
+		},
+		extensions: [ '', '.js', '.sass' ]
+	},
 	module: {
 		loaders: [
-			{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
+			{ test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
+			{ test: /\.sass$/, loaders: [ 'style', 'css', 'sass' ] },
+			{ test: /\.html$/, loader: 'raw' }
 		]
 	},
 	plugins: [

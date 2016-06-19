@@ -12,13 +12,14 @@
     },
     "rules": {
         "eqeqeq": [
-          "error",
-          "always"
+            "error",
+            "always"
         ],
         "indent": [
             "warn",
-            "tab",
-            { "SwitchCase": 1 }
+            "tab", {
+                "SwitchCase": 1
+            }
         ],
         "linebreak-style": [
             "error",
@@ -33,10 +34,13 @@
             "never"
         ],
         "no-console": [
-          "warn"
+            "warn"
         ],
         "no-unused-vars": [
-          "warn"
-        ]
+            "warn"
+        ],
+				"no-empty": [
+					"warn"
+				]
     }
 }
