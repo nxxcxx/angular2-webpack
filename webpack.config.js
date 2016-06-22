@@ -13,6 +13,7 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
+			root: path.resolve( __dirname ),
 			src: path.resolve( __dirname, 'src' ),
 			sass: path.resolve( __dirname, 'sass' )
 		},
