@@ -4,7 +4,6 @@ var HtmlWebpackPlugin = require( 'html-webpack-plugin' )
 
 module.exports = {
 	entry: [
-		'./node_modules/angular2/bundles/angular2-polyfills.js',
 		'./src/index.js'
 	],
 	output: {
@@ -22,7 +21,7 @@ module.exports = {
 	},
 	module: {
 		loaders: [
-			{ test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
+			{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?cacheDirectory' },
 			{ test: /\.sass$|\.css$/, loaders: [ 'style', 'css', 'sass' ] },
 			{ test: /\.html$/, loader: 'raw' },
 			{ test: /\.(png|jpg|woff|woff2|eot|ttf|svg)(\?.*$|$)/, exclude: /node_modules/, loader: 'url-loader?importLoaders=1&limit=100000' }
@@ -34,5 +33,5 @@ module.exports = {
 			inject: 'body'
 		} )
 	],
-	devtool: '#inline-source-map'
+	devtool: 'eval'
 }

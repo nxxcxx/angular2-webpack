@@ -1,8 +1,8 @@
-import { Component } from 'angular2/core'
+import { Component } from '@angular/core'
 
 @Component( {
 
-	selector: 'root-component',
+	selector: 'rootComponent',
 	template: '<h3>{{header}}</h3>'
 
 } )
